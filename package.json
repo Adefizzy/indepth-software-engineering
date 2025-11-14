@@ -1,0 +1,16 @@
+{
+  "name": "advancing-software-engineering-skills",
+  "version": "1.0.0",
+  "description": "This repository will hold my practices of indept software engineering/computer science concepts",
+  "license": "ISC",
+  "author": "Adeniji Adefisayo",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
