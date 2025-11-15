@@ -1,13 +1,17 @@
+
+// product
 interface Channel {
     send():void
 }
 
+// concrete product 1
 class EmailChannel implements Channel{
     send(){
         console.log("Sending email notification")
     }
 }
 
+// concrete product 2
 class SmsChannel implements Channel{
     send(){
         console.log("Sending sms notification")
@@ -15,6 +19,7 @@ class SmsChannel implements Channel{
 }
 
 
+// creator class
 abstract class Notification{
 
     abstract createChannel() : Channel;
@@ -28,12 +33,15 @@ abstract class Notification{
 }
 
 
+// concrete creator 1
 class EmailNotification extends Notification{
     createChannel(): Channel {
         return new EmailChannel()
     }
 }
 
+
+// concrete creator 2
 class SmsNotification extends Notification{
     createChannel(): Channel {
         return new SmsChannel()
@@ -41,9 +49,11 @@ class SmsNotification extends Notification{
 }
 
 
+// client code
 function client(notification: Notification){
     notification.broadCast();
 }
+
 
 client(new EmailNotification());
 
